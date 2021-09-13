@@ -9,17 +9,17 @@ class Category {
     }
 
     renderCard = () => {
-        const {name, imageURL} = this.data
-        document.querySelector(".category-container").innerHTML +=
+        const {name, imageUrl, id} = this.data
+        document.getElementById("category-container").innerHTML +=
         `<div class="category-card">
-            <img src=${imageURL} alt=${name}/>
+            <img src=${imageUrl} alt=${name}/>
             <p>${name}</p>
         </div>`
     }
 
     static renderIndex(){
         const categoryContainer = document.createElement("div")
-        categoryContainer.classList.add("category-container")
+        categoryContainer.id = "category-container"
         document.getElementById("main").appendChild(categoryContainer)
         this.all.forEach(category => category.renderCard())
     }
