@@ -13,15 +13,20 @@ class Category {
         document.getElementById("category-container").innerHTML +=
         `<div class="category-card">
             <img src=${imageUrl} alt=${name}/>
-            <p>${name}</p>
+            <p class="title">${name}</p>
         </div>`
     }
 
-    static renderIndex(){
+    static handleIndexClick = (e) => {
+        console.log(e.target)
+    }
+
+    static renderIndex = () => {
         const categoryContainer = document.createElement("div")
         categoryContainer.id = "category-container"
         document.getElementById("main").appendChild(categoryContainer)
         this.all.forEach(category => category.renderCard())
+        categoryContainer.addEventListener("click", this.handleIndexClick)
     }
 
 
