@@ -5,21 +5,29 @@ class Category {
     constructor(data) {
         this.data = data
         this.constructor.all.push(this)
+    }
+
+    renderShow = () => {
         console.log(this)
     }
 
     renderCard = () => {
         const {name, imageUrl, id} = this.data
         document.getElementById("category-container").innerHTML +=
-        `<div class="category-card">
+        `<div class="category-card" data-id=${id}>
             <img src=${imageUrl} alt=${name}/>
             <p class="title">${name}</p>
         </div>`
     }
 
     static handleIndexClick = (e) => {
-        console.log(e.target)
+        if (e.target.tagName == "IMG" || e.target.classList.contains("title")) {
+            const id = e.target.closest(".category-card").dataset.id
+            this.find(id).renderShow()
+        }
     }
+
+    static find = (id) => this.all.find(category => category.data.id == id)
 
     static renderIndex = () => {
         const categoryContainer = document.createElement("div")
