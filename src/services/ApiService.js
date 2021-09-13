@@ -3,5 +3,5 @@ class ApiService {
         this.api = api
     }
 
-    getCategories = () => fetch(this.api + "/categories").then(res => res.json() )
+    getCategories = () => fetch(this.api + "/categories").then(res => res.json())
 }

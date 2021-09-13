@@ -8,14 +8,15 @@ class Category {
         console.log(this)
     }
 
-    static renderCategoryIndex() {
-        const categoryContainr = document.createElement("div")
-        document.getElementById("main").appendChild(categoryContainer)
+    static addCategory(category){
+        new Category(category)
     }
 
-    static getCategories() {
+
+    static getCategories(){
         api.getCategories().then(categories => {
             categories.forEach(category => Category.addCategory(category))
+
         })
     }
 }
