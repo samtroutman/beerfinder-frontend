@@ -37,10 +37,10 @@ class Category {
     static find = (id) => this.all.find(category => category.data.id == id)
 
     static renderIndex = () => {
-        const categoryContainer = document.createElement("div")
-        categoryContainer.id = "category-container"
         const main = document.getElementById("main")
         main.innerHTML = ""
+        const categoryContainer = document.createElement("div")
+        categoryContainer.id = "category-container"
         main.appendChild(categoryContainer)
         this.all.forEach(category => category.renderCard())
         categoryContainer.addEventListener("click", this.handleIndexClick)
