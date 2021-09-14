@@ -27,15 +27,16 @@ class Category {
         </div>`
     }
 
-    static handleIndexClick = (e) => {
-        if (e.target.tagName == "IMG" || e.target.classList.contains("title")) {
-            const id = e.target.closest(".category-card").dataset.id
-            this.find(id).renderShow()
-        }
-    }
-
+    
     static find = (id) => this.all.find(category => category.data.id == id)
-
+    
+    static getCategories(){
+        api.getCategories().then(categories => {
+            categories.forEach(category => new Category(category))
+            this.renderIndex()
+        })
+    }
+    
     static renderIndex = () => {
         const main = document.getElementById("main")
         main.innerHTML = ""
@@ -45,12 +46,12 @@ class Category {
         this.all.forEach(category => category.renderCard())
         categoryContainer.addEventListener("click", this.handleIndexClick)
     }
-
-
-    static getCategories(){
-        api.getCategories().then(categories => {
-            categories.forEach(category => new Category(category))
-            this.renderIndex()
-        })
+    
+    static handleIndexClick = (e) => {
+        if (e.target.tagName == "IMG" || e.target.classList.contains("title")) {
+            const id = e.target.closest(".category-card").dataset.id
+            this.find(id).renderShow()
+        }
     }
+    
 }
