@@ -8,7 +8,12 @@ class Category {
     }
 
     renderShow = () => {
-        console.log(this)
+        const {name, imageUrl} = this.data
+        document.getElementById("main").innerHTML = 
+        `<div class="show">
+        <h1>${name}</h1>
+        <img src="${imageUrl}" alt=${name}/>
+        </div>`
     }
 
     renderCard = () => {
