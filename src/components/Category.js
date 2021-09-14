@@ -14,7 +14,7 @@ class Category {
         <h1>${name}</h1>
         <img src="${imageUrl}" alt=${name}/>
         </div>
-        <button id="goBack">Go Back<button>`
+        <button id="goBack">Go Back</button>`
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
     }
 
@@ -39,7 +39,9 @@ class Category {
     static renderIndex = () => {
         const categoryContainer = document.createElement("div")
         categoryContainer.id = "category-container"
-        document.getElementById("main").appendChild(categoryContainer)
+        const main = document.getElementById("main")
+        main.innerHTML = ""
+        main.appendChild(categoryContainer)
         this.all.forEach(category => category.renderCard())
         categoryContainer.addEventListener("click", this.handleIndexClick)
     }
