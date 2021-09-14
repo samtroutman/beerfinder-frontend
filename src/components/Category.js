@@ -4,6 +4,7 @@ class Category {
 
     constructor(data) {
         this.data = data
+        this.beers = this.data.beers.map(beer => new Beer(beer))
         this.constructor.all.push(this)
     }
 
