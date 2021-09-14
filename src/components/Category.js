@@ -13,7 +13,9 @@ class Category {
         `<div class="show">
         <h1>${name}</h1>
         <img src="${imageUrl}" alt=${name}/>
-        </div>`
+        </div>
+        <button id="goBack">Go Back<button>`
+        document.getElementById("goBack").addEventListener("click", Category.renderIndex)
     }
 
     renderCard = () => {
