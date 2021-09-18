@@ -12,11 +12,15 @@ class Category {
         const {name, imageUrl} = this.data
         document.getElementById("main").innerHTML = 
         `<div class="show">
-        <h1>${name}</h1>
-        <img src="${imageUrl}" alt=${name}/>
+            <h1>${name}</h1>
+            <img src="${imageUrl}" alt=${name}/>
+            <div class="container"></div>
         </div>
         <button id="goBack">Go Back</button>`
+
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
+        
+        this.beers.forEach(beer => beer.render ())
     }
 
     renderCard = () => {
