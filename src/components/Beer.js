@@ -10,7 +10,6 @@ class Beer {
         `<div class="card">
             <h1>${name} • ${brewery}</h1>
             <img src=${image} alt=${name}</img>
-
         </div>`
     }
 
