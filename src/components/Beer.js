@@ -15,6 +15,9 @@ class Beer {
         <p>Likes: ${likes}</p>
         <button class="like-btn">Like ${name}</button>
         </div>`
+        document.querySelector("like-btn").addEventListener("click", Beer.like)
+        
+
     }
 
     like = (card) => {
