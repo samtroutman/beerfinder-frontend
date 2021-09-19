@@ -57,6 +57,11 @@ class Category {
             const id = e.target.closest(".category-card").dataset.id
             this.find(id).renderShow()
         }
-    }
+        // else if (e.target.classList.contains("like-btn")){
+        //     const card = e.target.closest(".beer-card")
+        //     const id = beer.dataset.id
+        //     Beer.find(id).like(card)
+        // }
+     }
     
 }
