@@ -14,9 +14,7 @@ class Beer {
         <p>${description}</p>
         <p>Likes: ${likes}</p>
         <button class="like-btn">Like ${name}</button>
-        </div>`
-        document.querySelector("like-btn").addEventListener("click", Beer.like)
-        
+        </div>`        
 
     }
 
