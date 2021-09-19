@@ -17,10 +17,10 @@ class Category {
             <div class="container"></div>
         </div>
         <button id="goBack">Go Back</button>`
+        this.beers.forEach(beer => beer.render ())
 
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
         
-        this.beers.forEach(beer => beer.render ())
     }
 
     renderCard = () => {
