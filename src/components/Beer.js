@@ -13,6 +13,7 @@ class Beer {
         <h2>IBU: ${ibu} ABV: ${abv}</h2>
         <p>${description}</p>
         <p>Likes: ${likes}</p>
+        <button class="like-btn">Like ${name}</button>
         </div>`
     }
 
