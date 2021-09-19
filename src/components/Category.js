@@ -14,9 +14,9 @@ class Category {
         `<div class="show">
             <h1>${name}</h1>
             <img src="${imageUrl}" alt=${name}/>
-            <div class="container"></div>
-        </div>
-        <button id="goBack">Go Back</button>`
+            </div>
+            <div class="beer-container"></div>
+            <button id="goBack">Go Back</button>`
         this.beers.forEach(beer => beer.render ())
 
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
@@ -57,11 +57,6 @@ class Category {
             const id = e.target.closest(".category-card").dataset.id
             this.find(id).renderShow()
         }
-        // else if (e.target.classList.contains("like-btn")){
-        //     const card = e.target.closest(".beer-card")
-        //     const id = beer.dataset.id
-        //     Beer.find(id).like(card)
-        // }
      }
     
 }
