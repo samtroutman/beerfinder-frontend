@@ -5,11 +5,13 @@ class Beer {
     }
 
     render = () => {
-        const {name, brewery, description, ibu, abv, image} = this.data
+        const {name, brewery, description, ibu, abv, image, likes} = this.data
         document.querySelector(".container").innerHTML +=
         `<div class="card">
-            <h1>${name} • ${brewery}</h1>
-            <img src=${image} alt=${name}</img>
+        <img src=${image} alt=${name}</img>
+        <h1>${name} • ${brewery}</h1>
+        <h2>IBU: ${ibu} • ABV: ${abv}</h2>
+        <p>${description}</p>
         </div>`
     }
 
