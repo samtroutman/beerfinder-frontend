@@ -53,15 +53,10 @@ class Category {
     }
     
     static handleIndexClick = (e) => {
-        if (e.target.tagName == "IMG" || e.target.classList.contains("title")) {
+        if (e.target.classList.contains("title")) {
             const id = e.target.closest(".category-card").dataset.id
             this.find(id).renderShow()
         }
      }
-
-    //  static handleLikeClick = (e) => {
-    //         console.log(e.target)
-         
-    //  }
     
 }
