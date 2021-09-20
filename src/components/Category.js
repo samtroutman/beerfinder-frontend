@@ -18,6 +18,10 @@ class Category {
             <div class="beer-container"></div>
             <button id="goBack">Go Back</button>`
         this.beers.forEach(beer => beer.render ())
+
+        // document.getElementById("like-btn").addEventListener("click", () => {
+        //     console.log("test")
+        // })
         
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
         
