@@ -21,9 +21,8 @@ class Category {
 
         document.addEventListener("click", function(e) {
             if (e.target.classList.contains("like-button")) {
-                const beerCard = e.target.closest(".beer-card")
-                const id = beerCard.dataset.id
-                console.log(e.target)
+                const id = e.target.closest(".beer-card").dataset.id
+                Beer.find(id).like(Beer)
             }
         })
         
@@ -39,6 +38,22 @@ class Category {
             <p class="title">${name}</p>
         </div>`
     }
+
+    likeBeer = (id, likes) => fetch(`${this.api}/beers/${id}`, {
+        method: 'PATCH', 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({likes: likes}),
+      })
+      .then(res => res.json())
+
+      like = (card) => {
+        likeBeer(this.data.id, this.data.likes + 1).then(beer => {
+          this.data = beer
+          card.querySelector("p").innerText = `${this.data.likes} Likes`
+        })
+      }
 
     
     static find = (id) => this.all.find(category => category.data.id == id)

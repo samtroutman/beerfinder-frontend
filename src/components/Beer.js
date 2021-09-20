@@ -32,6 +32,15 @@ class Beer {
         body: JSON.stringify({likes: likes}),
       })
       .then(res => res.json())
+
+      like = (card) => {
+        likeBeer(this.data.id, this.data.likes + 1).then(beer => {
+          this.data = beer
+          card.querySelector("p").innerText = `${this.data.likes} Likes`
+        })
+      }
+
+
       
 
 
