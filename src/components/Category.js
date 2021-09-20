@@ -18,7 +18,7 @@ class Category {
             <div class="beer-container"></div>
             <button id="goBack">Go Back</button>`
         this.beers.forEach(beer => beer.render ())
-
+        
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
         
     }
@@ -30,14 +30,6 @@ class Category {
             <img src=${imageUrl} alt=${name}/>
             <p class="title">${name}</p>
         </div>`
-    }
-
-    static addEventListeners = () => {
-        Beer.beerContainer.addEventListener("click", Beer.handleShowClicks)
-    }
-
-    static handleShowClicks = (e) => {
-        console.log(e.target)
     }
 
     
@@ -66,5 +58,10 @@ class Category {
             this.find(id).renderShow()
         }
      }
+
+    //  static handleLikeClick = (e) => {
+    //         console.log(e.target)
+         
+    //  }
     
 }
