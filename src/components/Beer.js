@@ -25,13 +25,5 @@ class Beer {
     }
 
 
-    // like = (card) => {
-    //     api.likeBeer(this.data.id, this.data.likes +1).then(beer => {
-    //         this.data = beer
-    //         card.innerHTML = this.render()
-    //     })
-    // }
-
-
 
 }
