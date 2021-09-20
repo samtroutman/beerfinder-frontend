@@ -19,9 +19,13 @@ class Category {
             <button id="goBack">Go Back</button>`
         this.beers.forEach(beer => beer.render ())
 
-        // document.getElementById("like-btn").addEventListener("click", () => {
-        //     console.log("test")
-        // })
+        document.addEventListener("click", function(e) {
+            if (e.target.classList.contains("like-button")) {
+                const beerCard = e.target.closest(".beer-card")
+                const id = beerCard.dataset.id
+                console.log(e.target)
+            }
+        })
         
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
         
@@ -57,6 +61,7 @@ class Category {
     }
     
     static handleIndexClick = (e) => {
+        e.stopPropagation();
         if (e.target.classList.contains("title")) {
             const id = e.target.closest(".category-card").dataset.id
             this.find(id).renderShow()

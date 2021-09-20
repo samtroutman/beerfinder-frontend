@@ -68,5 +68,16 @@
     justify-self: center;
   }
 
+  .like-button {
+    position: relative;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    height: 3rem;
+    width: max-content;
+    font-size: 16px;
+    justify-self: center;
+  }
+
   
   
