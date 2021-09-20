@@ -24,5 +24,15 @@ class Beer {
         return document.querySelector(".beer-container")
     }
 
+    likeBeer = (id, likes) => fetch(`${this.api}/beers/${id}`, {
+        method: 'PATCH', 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({likes: likes}),
+      })
+      .then(res => res.json())
+      
+
 
 }
