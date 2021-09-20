@@ -1,13 +1,15 @@
 class Beer {
+
+    static all =[]
     
     constructor(data) {
         this.data = data 
     }
 
     render = () => {
-        const {name, brewery, description, ibu, abv, image, likes} = this.data
-        document.querySelector(".beer-container").innerHTML +=
-        `<div class="beer-card">
+        const {id, name, brewery, description, ibu, abv, image, likes} = this.data
+        this.beerContainer.innerHTML +=
+        `<div class="beer-card" data-id=${id}>
         <img src=${image} alt=${name}</img>
         <h1>${name} • ${brewery}</h1>
         <h2>IBU: ${ibu} ABV: ${abv}</h2>
@@ -19,16 +21,9 @@ class Beer {
     }
 
     get beerContainer() {
-        return document.getElementById("beer-container")
+        return document.querySelector(".beer-container")
     }
 
-    static addEventListeners = () => {
-        beerContainer.addEventListener("click", Beer.handleLikeClick)
-    }
-
-    static handleLikeClick = (e) => {
-        console.log(e.target)
-    }
 
     // like = (card) => {
     //     api.likeBeer(this.data.id, this.data.likes +1).then(beer => {

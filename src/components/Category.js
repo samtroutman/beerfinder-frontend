@@ -32,6 +32,14 @@ class Category {
         </div>`
     }
 
+    static addEventListeners = () => {
+        Beer.beerContainer.addEventListener("click", Beer.handleShowClicks)
+    }
+
+    static handleShowClicks = (e) => {
+        console.log(e.target)
+    }
+
     
     static find = (id) => this.all.find(category => category.data.id == id)
     
