@@ -27,7 +27,6 @@ class Beer {
         api.likeBeer(this.data.id, this.data.likes + 1).then(beer => {
           this.data = beer
           beerCard.querySelector("p").innerText = `${this.data.likes} Likes`
-            console.log("test")
         })
       }
 
@@ -40,7 +39,7 @@ class Beer {
         if (e.target.classList.contains("like-button")) {
             const beerCard = e.target.closest(".beer-card")
             const id = beerCard.dataset.id
-            console.log(Beer.findBeer(id).like(beerCard))
+            Beer.findBeer(id).like(beerCard)
         }
     }
     
