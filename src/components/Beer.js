@@ -4,6 +4,7 @@ class Beer {
     
     constructor(data) {
         this.data = data
+        this.constructor.all.push(this)
     }
 
     generateHTML = () => {
@@ -25,10 +26,12 @@ class Beer {
     like = (beerCard) => {
         api.likeBeer(this.data.id, this.data.likes + 1).then(beer => {
           this.data = beer
-          // card.querySelector("p").innerText = `${this.data.likes} Likes`
-          beerCard.innerHTML = this.generateHTML()
+          beerCard.querySelector("p").innerText = `${this.data.likes} Likes`
+            console.log("test")
         })
       }
+
+    static findBeer = (id) => this.all.find(beer => beer.data.id == id)
 
     static handleLike = (e) => {
         document.querySelectorAll(".like-button").forEach(function(e){
@@ -37,7 +40,7 @@ class Beer {
         if (e.target.classList.contains("like-button")) {
             const beerCard = e.target.closest(".beer-card")
             const id = beerCard.dataset.id
-            console.log(id)
+            console.log(Beer.findBeer(id).like(beerCard))
         }
     }
     
