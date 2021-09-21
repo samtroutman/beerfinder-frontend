@@ -17,15 +17,15 @@ class Category {
             </div>
             <div class="beer-container"></div>
             <button id="goBack">Go Back</button>`
-        this.beers.forEach(beer => beer.render ())
+        this.beers.forEach(beer => beer.generateHTML ())
 
-        document.addEventListener("click", function(e) {
-            if (e.target.classList.contains("like-button")) {
-                const beerCard = e.target.closest(".beer-card")
-                const id = beerCard.dataset.id
-                console.log(e.target)
-            }
-        })
+        // document.addEventListener("click", function(e) {
+        //     if (e.target.classList.contains("like-button")) {
+        //         const beerCard = e.target.closest(".beer-card")
+        //         const id = beerCard.dataset.id
+        //         console.log(e.target)
+        //     }
+        // })
         
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
         

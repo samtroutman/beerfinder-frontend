@@ -6,7 +6,7 @@ class Beer {
         this.data = data 
     }
 
-    render = () => {
+    generateHTML = () => {
         const {id, name, brewery, description, ibu, abv, image, likes} = this.data
         this.beerContainer.innerHTML +=
         `<div class="beer-card" data-id=${id}>
@@ -24,15 +24,9 @@ class Beer {
         return document.querySelector(".beer-container")
     }
 
-      like = (card) => {
-        api.likeBeer(this.data.id, this.data.likes + 1).then(beer => {
-          this.data = beer
-          card.querySelector("p").innerText = `${this.data.likes} Likes`
-        })
-      }
-
-
-      
+    addEventListeners(){
+    this.card.querySelector(".like-button").addEventListener("click", this.like)
+  }
 
 
 }
