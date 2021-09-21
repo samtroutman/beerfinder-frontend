@@ -22,10 +22,18 @@ class Beer {
 
     }
 
+    like = (beerCard) => {
+        api.likeBeer(this.data.id, this.data.likes + 1).then(beer => {
+          this.data = beer
+          // card.querySelector("p").innerText = `${this.data.likes} Likes`
+          beerCard.innerHTML = this.generateHTML()
+        })
+      }
+
     static handleLike = (e) => {
         document.querySelectorAll(".like-button").forEach(function(e){
             e.addEventListener("click", Beer.handleLike)
-      })
+        })
         if (e.target.classList.contains("like-button")) {
             const beerCard = e.target.closest(".beer-card")
             const id = beerCard.dataset.id
