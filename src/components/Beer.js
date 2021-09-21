@@ -3,7 +3,7 @@ class Beer {
     static all =[]
     
     constructor(data) {
-        this.data = data 
+        this.data = data
     }
 
     generateHTML = () => {
@@ -20,23 +20,8 @@ class Beer {
 
     }
 
-    renderBeer(){
-        const cardDiv = document.createElement('div')
-        cardDiv.className = "card"
-        cardDiv.dataset.id = this.beer.id
-        cardDiv.innerHTML = this.generateHTML()
-        beerList.append(cardLi)
-        this.card = cardDiv
-        this.addEventListeners()
-      }
-    
-
     get beerContainer() {
         return document.querySelector(".beer-container")
-    }
-
-    addEventListeners(){
-    this.card.querySelector(".like-button").addEventListener("click", console.log("test"))
     }
 
 

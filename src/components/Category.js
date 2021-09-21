@@ -18,14 +18,6 @@ class Category {
             <div class="beer-container"></div>
             <button id="goBack">Go Back</button>`
         this.beers.forEach(beer => beer.generateHTML ())
-
-        // document.addEventListener("click", function(e) {
-        //     if (e.target.classList.contains("like-button")) {
-        //         const beerCard = e.target.closest(".beer-card")
-        //         const id = beerCard.dataset.id
-        //         console.log(e.target)
-        //     }
-        // })
         
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
         
@@ -64,8 +56,6 @@ class Category {
         e.stopPropagation();
         if (e.target.classList.contains("title")) {
             const id = e.target.closest(".category-card").dataset.id
-            this.find(id).renderShow()
-        }
-     }
-    
+            this.find(id).renderShow() }
+    }
 }
