@@ -18,10 +18,6 @@ class Category {
             <div class="beer-container"></div>
             <button id="goBack">Go Back</button>`
         this.beers.forEach(beer => beer.generateHTML ())
-
-        document.querySelectorAll(".like-button").forEach(function(e){
-            e.addEventListener("click", Beer.handleLike)
-      })
         
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
         

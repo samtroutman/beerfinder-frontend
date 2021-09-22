@@ -19,7 +19,7 @@ class Beer {
         <button class="like-button" id="like-btn">Like ${name}</button>
         </div>`
 
-        document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
+        // document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
 
     }
 
