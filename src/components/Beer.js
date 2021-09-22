@@ -15,7 +15,7 @@ class Beer {
         <h1>${name} • ${brewery}</h1>
         <h2>IBU: ${ibu} ABV: ${abv}</h2>
         <p>${description}</p>
-        <p>Likes: ${likes}</p>
+        <span class="likes-count">${likes} Likes</span>
         <button class="like-button" id="like-btn">Like ${name}</button>
         </div>`
 
@@ -26,7 +26,7 @@ class Beer {
     like = (beerCard) => {
         api.likeBeer(this.data.id, this.data.likes + 1).then(beer => {
           this.data = beer
-          beerCard.querySelector("p").innerText = this.data.likes
+          beerCard.querySelector(".likes-count").innerText = `${this.data.likes} Likes`
         })
       }
 
