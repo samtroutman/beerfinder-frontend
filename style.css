@@ -45,8 +45,10 @@
   }
 
   .category-card {
+    margin: 10px;
+    background-color: black;
     border: 3px solid var(--main-color);
-    border-radius: 25px;
+    border-radius: 25%;
   }
 
   .category-card img {
@@ -56,7 +58,7 @@
   }
 
   .category-card .title {
-    font-size: 14 px;
+    font-size: medium;
     color: white;
   }
 
