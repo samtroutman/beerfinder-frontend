@@ -12,8 +12,7 @@ class Category {
         const {name, imageUrl} = this.data
         document.getElementById("main").innerHTML = 
         `<div class="show">
-            <h1>${name}</h1>
-            <img src="${imageUrl}" alt=${name}/>
+            <h1>${name}s</h1>
             </div>
             <div class="beer-container"></div>
             <button id="goBack">Go Back</button>`
