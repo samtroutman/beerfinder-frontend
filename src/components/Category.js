@@ -27,7 +27,7 @@ class Category {
         const {name, imageUrl, id} = this.data
         document.getElementById("category-container").innerHTML +=
         `<div class="category-card" data-id=${id}>
-            <img src=${imageUrl} alt=${name}/>
+            <img class = "category-img" src=${imageUrl} alt=${name}/>
             <p class="title">${name}</p>
         </div>`
     }
@@ -54,7 +54,7 @@ class Category {
     
     static handleIndexClick = (e) => {
         e.stopPropagation();
-        if (e.target.classList.contains("title")) {
+        if (e.target.classList.contains("title") || e.target.classList.contains("category-img") ) {
             const id = e.target.closest(".category-card").dataset.id
             this.find(id).renderShow() }
     }
