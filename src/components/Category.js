@@ -17,7 +17,7 @@ class Category {
             </div>
             <div class="beer-container"></div>
             <button id="goBack">Go Back</button>`
-        this.beers.forEach(beer => beer.generateHTML ())
+        this.beers.forEach(beer => beer.renderBeer ())
         
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
         
