@@ -12,8 +12,9 @@ class Beer {
         this.beerContainer.innerHTML +=
         `<div class="beer-card" data-id=${id}>
             <img src=${image} alt=${name}</img>
-            <h1>${name} • ${brewery}</h1>
-            <h2>IBU: ${ibu} ABV: ${abv}</h2>
+            <h1>${name}</h1>
+            <h2>${brewery}</h2>
+            <h3>IBU: ${ibu} ABV: ${abv}</h3>
             <p>${description}</p>
             <div class="likes">
                 <span class="likes-count">${likes} Likes</span>

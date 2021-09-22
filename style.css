@@ -14,15 +14,18 @@
   #beer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: baseline;
   }
 
   .beer-card {
+    display: inline-block;
     margin: 10px;
     padding: 10px;
     background-color: white;
     border: 3px solid var(--main-color);
     border-radius: 25px;
+    width: 25%;
   }
 
   .beer-card img {
@@ -40,7 +43,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
-
 
   .category-card {
     border: 3px solid var(--main-color);
