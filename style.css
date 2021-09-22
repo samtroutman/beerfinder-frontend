@@ -28,6 +28,10 @@
     object-fit: contain;
   }
 
+  .beer-card .likes {
+    font-style: bold
+  }
+
   #category-container {
     display: flex;
     flex-wrap: wrap;

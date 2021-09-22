@@ -26,7 +26,7 @@ class Beer {
     like = (beerCard) => {
         api.likeBeer(this.data.id, this.data.likes + 1).then(beer => {
           this.data = beer
-          beerCard.querySelector("p").innerText = `${this.data.likes} Likes`
+          beerCard.querySelector("p").innerText = this.data.likes
         })
       }
 
