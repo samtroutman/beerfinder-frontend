@@ -9,7 +9,7 @@ class Category {
     }
 
     renderShow = () => {
-        const {name, imageUrl} = this.data
+        const {name} = this.data
         document.getElementById("main").innerHTML = 
         `<div class="show">
             <h1>${name}s</h1>
