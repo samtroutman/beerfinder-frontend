@@ -19,7 +19,6 @@ class Category {
         this.beers.forEach(beer => beer.renderBeer ())
         
         document.getElementById("goBack").addEventListener("click", Category.renderIndex)
-        
     }
 
     renderCard = () => {

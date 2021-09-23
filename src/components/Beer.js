@@ -21,9 +21,7 @@ class Beer {
             </div>
         <button class="like-button" id="like-btn">Like ${name}</button>
         </div>`
-
         document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
-
     }
 
     like = (beerCard) => {
@@ -49,6 +47,5 @@ class Beer {
     get beerContainer() {
         return document.querySelector(".beer-container")
     }
-
 
 }
