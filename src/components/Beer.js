@@ -72,6 +72,11 @@ class Beer {
         }
     }
 
+    // static handleRandomClick = (e) => {
+    //     if (e.target.classList.contains(".random-button")) {
+    //         console.log("test") }
+    // }
+
     static renderRandom = () => {
         // console.log("test")
         const main = document.getElementById("main")

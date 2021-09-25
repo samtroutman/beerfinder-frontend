@@ -47,7 +47,9 @@ class Category {
         categoryContainer.id = "category-container"
         main.appendChild(categoryContainer)
         this.all.forEach(category => category.renderCard())
-        categoryContainer.addEventListener("click", this.handleIndexClick)
+        document.addEventListener("click", this.handleIndexClick)
+        // document.addEventListener("click", this.handleRandomClick)
+
     }
     
     static handleIndexClick = (e) => {
@@ -55,5 +57,7 @@ class Category {
         if (e.target.classList.contains("title") || e.target.classList.contains("category-img") ) {
             const id = e.target.closest(".category-card").dataset.id
             this.find(id).renderShow() }
-    }
+        else if (e.target.classList.contains("random-button")) {
+            Beer.renderRandom ()
+     }
 }
