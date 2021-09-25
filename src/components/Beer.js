@@ -24,6 +24,25 @@ class Beer {
         document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
     }
 
+    renderRandom = () => {
+        const {id, name, brewery, description, ibu, abv, image, likes, category} = this.data
+        this.beerContainer.innerHTML +=
+        `<div class="beer-card" data-id=${id}>
+            <img src=${image} alt=${name}</img>
+            <h1>${name}</h1>
+            <h2>${brewery}</h2>
+            <h3>${category}</h3>
+            <h3>IBU: ${ibu} ABV: ${abv}</h3>
+            <p>${description}</p>
+            <div class="likes">
+                <span class="likes-count">${likes} Likes</span>
+            </div>
+        <button class="like-button" id="like-btn">Like ${name}</button>
+        </div>`
+        document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
+
+    }
+
     like = (beerCard) => {
         api.likeBeer(this.data.id, this.data.likes + 1).then(beer => {
           this.data = beer
@@ -37,7 +56,7 @@ class Beer {
         api.getBeers().then(beers => {
             beers.forEach(beer => new Beer(beer))
             const randomBeer = beers[Math.floor(Math.random() * beers.length)]
-        console.log(randomBeer)
+            console.log(randomBeer)
             // this.renderRandom()
         })
         // const randomBeer = beers[Math.floor(Math.random() * beers.length)]
