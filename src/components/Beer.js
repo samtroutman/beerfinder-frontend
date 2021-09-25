@@ -27,6 +27,23 @@ class Beer {
         })
     }
 
+    renderRandomBeer = () => {
+        const {id, name, brewery, description, ibu, abv, image, likes} = this.data
+        document.getElementById("main").innerHTML = 
+        `<div class="beer-card" data-id=${id}>
+            <img src=${image} alt=${name}</img>
+            <h1>${name}</h1>
+            <h2>${brewery}</h2>
+            <h3>IBU: ${ibu} ABV: ${abv}</h3>
+            <p>${description}</p>
+            <div class="likes">
+                <span class="likes-count">${likes} Likes</span>
+            </div>
+        <button class="like-button" id="like-btn">Like ${name}</button>
+        </div>`
+        console.log("test")
+    }
+
     like = (beerCard) => {
         api.likeBeer(this.data.id, this.data.likes + 1).then(beer => {
           this.data = beer
@@ -40,7 +57,7 @@ class Beer {
         api.getBeers().then(beers => {
             beers.forEach(beer => new Beer(beer))
             const randomBeer = beers[Math.floor(Math.random() * beers.length)]
-            console.log(randomBeer)
+            this.renderRandom(randomBeer)
         })
     }
 
@@ -53,6 +70,17 @@ class Beer {
             const id = beerCard.dataset.id
             Beer.findBeer(id).like(beerCard)
         }
+    }
+
+    static renderRandom = () => {
+        // console.log("test")
+        const main = document.getElementById("main")
+        main.innerHTML = ""
+        const randomContainer = document.createElement("div")
+        randomContainer.id = "beer-container"
+        main.appendChild(randomContainer)
+        this.all.forEach(beer => beer.renderRandomBeer())
+        // randomContainer.addEventListener("click", this.handleIndexClick)
     }
     
     get beerContainer() {
