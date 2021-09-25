@@ -60,4 +60,5 @@ class Category {
         else if (e.target.classList.contains("random-button")) {
             Beer.renderRandom ()
      }
+    }
 }
