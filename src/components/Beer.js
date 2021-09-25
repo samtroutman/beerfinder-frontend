@@ -21,7 +21,10 @@ class Beer {
             </div>
         <button class="like-button" id="like-btn">Like ${name}</button>
         </div>`
-        document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
+        // document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
+        document.querySelectorAll(".like-button").forEach(function(e){
+            e.addEventListener("click", Beer.handleLike)
+        })
     }
 
     like = (beerCard) => {
@@ -42,9 +45,9 @@ class Beer {
     }
 
     static handleLike = (e) => {
-        document.querySelectorAll(".like-button").forEach(function(e){
-            e.addEventListener("click", Beer.handleLike)
-        })
+        // document.querySelectorAll(".like-button").forEach(function(e){
+        //     e.addEventListener("click", Beer.handleLike)
+        // })
         if (e.target.classList.contains("like-button")) {
             const beerCard = e.target.closest(".beer-card")
             const id = beerCard.dataset.id
