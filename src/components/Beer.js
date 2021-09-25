@@ -33,6 +33,23 @@ class Beer {
 
     static findBeer = (id) => this.all.find(beer => beer.data.id == id)
 
+    static getRandomBeer(){
+        api.getBeers().then(beers => {
+            beers.forEach(beer => new Beer(beer))
+            const randomBeer = beers[Math.floor(Math.random() * beers.length)]
+        console.log(randomBeer)
+            // this.renderRandom()
+        })
+        // const randomBeer = beers[Math.floor(Math.random() * beers.length)]
+        // console.log(randomBeer)
+
+    }
+
+    // static renderRandom() {
+    //     const randomBeer = beers[Math.floor(Math.random() * beers.length)]
+    //     console.log(randomBeer)
+    // }
+
     static handleLike = (e) => {
         document.querySelectorAll(".like-button").forEach(function(e){
             e.addEventListener("click", Beer.handleLike)
