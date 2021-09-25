@@ -95,5 +95,19 @@
     justify-self: center;
   }
 
+  .random-button {
+    position: relative;
+    box-shadow: 2px 4px;
+
+    background-color: none;
+    border-color: gold;
+    border-style: solid;
+    border-radius: 10px;
+    height: 3rem;
+    width: max-content;
+    font-size: 16px;
+    justify-self: center;
+  }
+
   
   
