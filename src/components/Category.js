@@ -30,11 +30,6 @@ class Category {
         </div>`
     }
 
-    renderRandom = () => {
-        document.getElementById("main").innerHTML = 
-        this.beers.forEach(beer => this.renderRandom ())
-    }
-
     
     static find = (id) => this.all.find(category => category.data.id == id)
     
