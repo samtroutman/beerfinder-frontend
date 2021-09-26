@@ -70,7 +70,7 @@
     object-fit: contain;
   }
 
-  button {
+  .home-button {
     position: relative;
     background-color: #ffffff;
     border: none;

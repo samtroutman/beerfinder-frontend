@@ -14,11 +14,8 @@ class Category {
         `<div class="show">
             <h1>${name}s</h1>
             </div>
-            <div class="beer-container"></div>
-            <button id="goBack">Go Back</button>`
+            <div class="beer-container"></div>`
         this.beers.forEach(beer => beer.renderBeer ())
-        
-        document.getElementById("goBack").addEventListener("click", Category.renderIndex)
     }
 
     renderCard = () => {
@@ -48,7 +45,6 @@ class Category {
         main.appendChild(categoryContainer)
         this.all.forEach(category => category.renderCard())
         document.addEventListener("click", this.handleIndexClick)
-
     }
     
     static handleIndexClick = (e) => {
@@ -58,6 +54,6 @@ class Category {
             this.find(id).renderShow() }
         else if (e.target.classList.contains("random-button")) {
             Beer.getRandomBeer()
-     }
+        }
     }
 }
