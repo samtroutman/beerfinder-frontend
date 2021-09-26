@@ -41,7 +41,9 @@ class Beer {
             </div>
         <button class="like-button" id="like-btn">Like ${name}</button>
         </div>`
-        console.log("test")
+
+        document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
+
     }
 
     like = (beerCard) => {
@@ -57,6 +59,7 @@ class Beer {
         api.getBeers().then(beers => {
             beers.forEach(beer => new Beer(beer))
             const randomBeer = beers[Math.floor(Math.random() * beers.length)]
+            // console.log(randomBeer)
             this.renderRandom(randomBeer)
         })
     }
@@ -84,8 +87,7 @@ class Beer {
         const randomContainer = document.createElement("div")
         randomContainer.id = "beer-container"
         main.appendChild(randomContainer)
-        this.all.forEach(beer => beer.renderRandomBeer())
-        // randomContainer.addEventListener("click", this.handleIndexClick)
+        this.all.forEach(beer => beer.renderRandomBeer(beer))
     }
     
     get beerContainer() {
