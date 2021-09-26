@@ -4,6 +4,7 @@ class Beer {
     
     constructor(data) {
         this.data = data
+        // this.getBeer = new api.getBeers()
         this.constructor.all.push(this)
     }
 
@@ -43,7 +44,6 @@ class Beer {
         </div>`
 
         document.getElementById("like-btn").addEventListener("click", Beer.handleLike)
-
     }
 
     like = (beerCard) => {
@@ -55,14 +55,21 @@ class Beer {
 
     static findBeer = (id) => this.all.find(beer => beer.data.id == id)
 
+    // static getRandomBeer = () => {
+    //     api.getBeers().then(beers => {
+    //         beers.forEach(beer => new Beer(beer))
+    //         // const randomBeer = beers[Math.floor(Math.random() * beers.length)]
+    //         // console.log(randomBeer)
+    //         // this.renderRandom(randomBeer)
+    //         this.renderRandom()
+
+    //     })
+    // }
+
     static getRandomBeer(){
-        api.getBeers().then(beers => {
-            beers.forEach(beer => new Beer(beer))
-            const randomBeer = beers[Math.floor(Math.random() * beers.length)]
-            // console.log(randomBeer)
-            this.renderRandom(randomBeer)
-        })
-    }
+        api.getBeers().then(beer => new Beer(beer))
+            this.renderRandom()
+        }
 
     static handleLike = (e) => {
         // document.querySelectorAll(".like-button").forEach(function(e){
@@ -87,7 +94,7 @@ class Beer {
         const randomContainer = document.createElement("div")
         randomContainer.id = "beer-container"
         main.appendChild(randomContainer)
-        this.all.forEach(beer => beer.renderRandomBeer(beer))
+        this.all.forEach(beer => beer.renderRandomBeer())
     }
     
     get beerContainer() {

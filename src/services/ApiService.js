@@ -5,7 +5,7 @@ class ApiService {
 
     getCategories = () => fetch(this.api + "/categories").then(res => res.json())
 
-    getBeers = () => fetch(this.api + "/beers").then(res => res.json())
+    getBeers = (id) => fetch(`${this.api}/beers/${id}`).then(res => res.json())
 
 
     likeBeer = (id, likes) => fetch(`${this.api}/beers/${id}`, {

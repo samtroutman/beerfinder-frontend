@@ -58,7 +58,7 @@ class Category {
             const id = e.target.closest(".category-card").dataset.id
             this.find(id).renderShow() }
         else if (e.target.classList.contains("random-button")) {
-            Beer.renderRandom ()
+            Beer.getRandomBeer()
      }
     }
 }
