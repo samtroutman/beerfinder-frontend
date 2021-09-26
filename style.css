@@ -1,8 +1,6 @@
 :root {
     --bg-color: #21a292;
     --main-color: black;
-    /* --main-color-transparent: rgba(255, 166, 0, 0.459);
-    --header-font-family: Helvetica, sans-serif; */
   }
   
   body {
@@ -72,8 +70,10 @@
 
   .home-button {
     position: relative;
-    background-color: #ffffff;
-    border: none;
+    box-shadow: 2px 4px;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
     border-radius: 10px;
     height: 3rem;
     width: max-content;
@@ -84,9 +84,8 @@
   .like-button {
     position: relative;
     box-shadow: 2px 4px;
-
-    background-color: none;
-    border-color: black;
+    background-color: white;
+    border-color: #21a292;
     border-style: solid;
     border-radius: 10px;
     height: 3rem;
@@ -98,8 +97,7 @@
   .random-button {
     position: relative;
     box-shadow: 2px 4px;
-
-    background-color: none;
+    background-color: white;
     border-color: gold;
     border-style: solid;
     border-radius: 10px;
