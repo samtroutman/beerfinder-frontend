@@ -48,7 +48,6 @@ class Category {
         main.appendChild(categoryContainer)
         this.all.forEach(category => category.renderCard())
         document.addEventListener("click", this.handleIndexClick)
-        // document.addEventListener("click", this.handleRandomClick)
 
     }
     
