@@ -4,6 +4,7 @@ class Beer {
     
     constructor(data) {
         this.data = data
+        // this.getBeer = new api.getBeers()
         this.constructor.all.push(this)
     }
 
@@ -49,15 +50,14 @@ class Beer {
           this.data = beer
           beerCard.querySelector(".likes-count").innerText = `${this.data.likes} Likes`
         })
-      }
-
+    }
+    
+    get beerContainer() {
+        return document.querySelector(".beer-container")
+    }
+    
     static findBeer = (id) => this.all.find(beer => beer.data.id == id)
-
-    static getRandomBeer(){
-        api.getBeers().then(beer => new Beer(beer))
-            this.renderRandom()
-        }
-
+    
     static handleLike = (e) => {
         if (e.target.classList.contains("like-button")) {
             const beerCard = e.target.closest(".beer-card")
@@ -65,6 +65,11 @@ class Beer {
             Beer.findBeer(id).like(beerCard)
         }
     }
+
+    static getRandomBeer(){
+        api.getBeers().then(beer => new Beer(beer))
+            this.renderRandom()
+        }
 
     static renderRandom = () => {
         const main = document.getElementById("main")
@@ -75,8 +80,5 @@ class Beer {
         this.all.forEach(beer => beer.renderRandomBeer())
     }
     
-    get beerContainer() {
-        return document.querySelector(".beer-container")
-    }
 
 }
